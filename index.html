@@ -267,9 +267,7 @@
                       
               }
               
-              if (picked.size == 0){
-                  return  0;
-              }
+
               
               // calculate the top score from some dummy roles matrix.
               
@@ -304,11 +302,16 @@
                   return b[1] - a[1];
               });
               var shower2 = shower.map(function(value,index) { return value[0]; })
+              
+              if (shower2.length == 0){
+                  return  0;
+              }
 
               document.getElementById("profiles").innerHTML = shower2.join(' ');
               document.getElementById("roletext").hidden = false;
               //remove this line if you don't want the debug
-              document.getElementById("role_score").innerHTML = JSON.stringify(scores);
+              //document.getElementById("role_score").innerHTML = JSON.stringify(scores);
+              console.log(scores);
           }
           
       </script>
