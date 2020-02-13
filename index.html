@@ -14,9 +14,6 @@
           color:#951b81;
         }
 
-        .question {
-          font-size:30px;
-        }
 
         label {
           border:1px solid #ddd;
@@ -90,7 +87,7 @@
          
 
         <ul class="choices">
-            <li><input class ='choice' id="probelmsolving" type="checkbox"><label for="probelmsolving">Probelm Solving</label></li>
+            <li><input class ='choice' id="problemsolving" type="checkbox"><label for="problemsolving">Problem Solving</label></li>
 
             <li><input class ='choice' id="lying" type="checkbox"><label for="lying">Lying</label></li>
 
@@ -155,7 +152,7 @@
 
               console.log(picked);
               
-              var role_stats = {'data scientist':['problemsolving','eating','sleeping'],'data consultant':['planning','problemsolving'],'data analyst':['problemsolving'],'delivery manager':['leadership','lying']};
+              var role_stats = {'data scientist':['problemsolving','eating','sleeping','creativity'],'data consultant':['planning','problemsolving'],'data analyst':['problemsolving'],'delivery manager':['leadership','lying','organisation']};
 
              // given the choces, loop over the roles and find the one with most matches. 
               
