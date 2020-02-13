@@ -7,6 +7,7 @@
           font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
           color:#272625;
         }
+        
 
         h1 {
           text-align:center;
@@ -83,10 +84,48 @@
            width:90%;
        }
         
+        
+        
+       div.logo {
+           position: absolute;
+           height:100px;
+           width:200px;
+           left :50px;
+           top:10px;
+           margin:10px;
+           
+       }
+       
+       .column {
+         float: left;
+         padding: 10px;
+         height: 300px; /* Should be removed. Only for demonstration */
+       }
+
+       .left {
+         width: 25%;
+       }
+
+       .right {
+         width: 65%;
+       }
+
+       /* Clear floats after the columns */
+       .row:after {
+         content: "";
+         display: table;
+         clear: both;
+       }
+
+
+
+       
+       
         </style>
     <body>
+        <div class="logo"><img src = "img/logo.svg"></div>
         
-      <h1>Pick your strongest attributes:</h1>
+      <h1 style='padding-top:50px'>Pick your strongest attributes:</h1>
          
 
         <ul class="choices">
@@ -114,7 +153,7 @@
 
         <li><input class ='choice' id="communication" type="checkbox"><label for="communication">Communication</label></li>
 
-        <li><input class ='choice' id="computerandtechnicalliteracy" type="checkbox"><label for="computerandtechnicalliteracy">Computer and technical literacy</label></li>
+        <li><input class ='choice' id="technicalliteracy" type="checkbox"><label for="technicalliteracy">Technical literacy</label></li>
 
         </ul>
 
@@ -122,39 +161,79 @@
 <center><button class="button" onclick="calc()">Click to see what role you matched to!</button></center>
 
 <div class = 'box'>
-<p>Role Scores</p>
-<h4>Down here can be the sorted list, with the profiles of your roles. Zeros will be hidden.:</h4>
-<div id='role_score'>    
-</div>
 
+<h3 id='roletext' hidden>You could be well suited to becoming a...</h3>
 <div id = 'profiles'>
 </div>
 
 
 </div>
 
-<div style ="visibility:hidden">
+<div style ="display:none">
+    
 <div id="data_scientist" class="panel">
   <h2>Data Scientist!</h2>
-  <p>Something about a profile. Some more words</p>
+  
+  <div class="row">
+    <div class="column left" >
+  <img src = "img/Data_science_Experiment@4x.png" height="250px">
+    </div>
+    <div class="column right" >
+      <h2>About this role</h2>
+      <p>Something about a profile. Some more words</p>
+      <p>Some text..</p>
+    </div>
+  </div>
+
 </div>
+
 
 <div id="data_consultant" class="panel">
   <h2>Data consultant!</h2>
-  <p>Something about a profile. Some more words</p>
+  <div class="row">
+    <div class="column left" >
+  <img src = "img/People_Presentation@4x.png" height="250px">
+    </div>
+    <div class="column right" >
+      <h2>About this role</h2>
+      <p>Something about a profile. Some more words</p>
+      <p>Some text..</p>
+    </div>
+  </div>
 </div>
 
 <div id="data_analyst" class="panel">
-  <h2>data analyst!</h2>
-  <p>Something about a profile. Some more words</p>
+  <h2>Data analyst!</h2>
+  <div class="row">
+    <div class="column left" >
+  <img src = "img/Analytics_Box_and_whisker@4x.png" height="250px">
+    </div>
+    <div class="column right" >
+      <h2>About this role</h2>
+      <p>Something about a profile. Some more words</p>
+      <p>Some text..</p>
+    </div>
+  </div>
 </div>
 
 <div id="delivery_manager" class="panel">
   <h2>Delivery manager!</h2>
-  <p>Something about a profile. Some more words</p>
+  <div class="row">
+    <div class="column left" >
+  <img src = "img/People_Delegate@4x.png" height="250px">
+    </div>
+    <div class="column right" >
+      <h2>About this role</h2>
+      <p>Something about a profile. Some more words</p>
+      <p>Some text..</p>
+    </div>
+  </div>
 </div>
 
 </div>
+
+<!-- take out this line if you don't want ot show it. or comment out the JS.-->
+<div id='role_score'></div>
 
       <script>
          
@@ -175,7 +254,14 @@
               }
               
               // calculate the top score from some dummy roles matrix.
-              var role_stats = {'data_scientist':['problemsolving','eating','sleeping','creativity'],'data_consultant':['planning','problemsolving'],'data_analyst':['problemsolving'],'delivery_manager':['leadership','lying','organisation']};
+              
+              //Problem Solving','Lying','Creativity','Planning','Organisation','Leadership','Flexibility', 'Handle Pressure', 'Initiative', 'Teamwork' , 'Communication', 'Computer and technical literacy
+              
+              var role_stats = {
+                  'data_scientist':['problemsolving','creativity','technicalliteracy'],
+              'data_consultant':['planning','problemsolving','technicalliteracy','communication'],
+                  'data_analyst':['problemsolving','flexibility','technicalliteracy'],
+                  'delivery_manager':['leadership','lying','organisation','teamwork','communication']};
 
              // given the choces, loop over the roles and find the one with most matches. 
               
@@ -202,6 +288,7 @@
               var shower2 = shower.map(function(value,index) { return value[0]; })
 
               document.getElementById("profiles").innerHTML = shower2.join(' ');
+              document.getElementById("roletext").hidden = false;
               
               document.getElementById("role_score").innerHTML = JSON.stringify(scores);
           }

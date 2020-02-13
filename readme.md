@@ -1,3 +1,16 @@
+# Role Matcher 
+
+For young data minds.
+
+Just put a div for each 'role'
+
+Change the role stats: 
+
+```
+              var role_stats = {'data_scientist':['problemsolving','eating','sleeping','creativity'],'data_consultant':['planning','problemsolving'],'data_analyst':['problemsolving'],'delivery_manager':['leadership','lying','organisation']};
+
+```
+
 generate the input with this python snippet
 
 
