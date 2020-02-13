@@ -4,9 +4,8 @@
 </head>
     <style>
         body {
-          font-family: 'Catamaran', sans-serif;
+          font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
           color:#272625;
-          background-color:#f6ea8c;
         }
 
         h1 {
@@ -20,7 +19,7 @@
         }
 
         label {
-          border:1px solid #e3e36a;
+          border:1px solid #ddd;
           padding:10px;
           margin:0 0 10px;
           display:block;
@@ -59,9 +58,6 @@
           list-style:none;
         }
 
-        input[type="checkbox"]{
-            padding:50px;
-        }
         
         
         .button {
@@ -73,26 +69,50 @@
           text-decoration: none;
           display: inline-block;
           font-size: 16px;
+          border-radius: 10px;
       }
+      
+      input[type="checkbox"]{
+          visibility:hidden;
+      }
+      
+      input[type="checkbox"]:checked+label{ 
+          font-weight: bold;
+          border: 1px solid #c0136b;
+       } 
+      
+      
         
         </style>
     <body>
         
       <h1>Pick your strongest attributes:</h1>
          
+
         <ul class="choices">
-          <li><label><input class ='choice' id="leadership" type="checkbox">Leadership</label></li>
-          <li><label><input class ='choice' id="problemsolving" type="checkbox">Problem solving</label></li>
-          <li><label><input class ='choice' id="planning" type="checkbox">Planning</label></li>
-          <li><label><input class ='choice' id="eating" type="checkbox">Eating</label></li>
-          <li><label><input class ='choice' id="sleeping" type="checkbox">Sleeping</label></li>
-          <li><label><input class ='choice' id="creative" type="checkbox">Creative</label></li>
-          <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
-          <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
-          <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
-          <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
-          <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
-          <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
+            <li><input class ='choice' id="probelmsolving" type="checkbox"><label for="probelmsolving">Probelm Solving</label></li>
+
+            <li><input class ='choice' id="lying" type="checkbox"><label for="lying">Lying</label></li>
+
+            <li><input class ='choice' id="sleeping" type="checkbox"><label for="sleeping">Sleeping</label></li>
+
+            <li><input class ='choice' id="creativity" type="checkbox"><label for="creativity">Creativity</label></li>
+
+            <li><input class ='choice' id="planning" type="checkbox"><label for="planning">Planning</label></li>
+
+            <li><input class ='choice' id="organisation" type="checkbox"><label for="organisation">Organisation</label></li>
+
+            <li><input class ='choice' id="eating" type="checkbox"><label for="eating">Eating</label></li>
+
+            <li><input class ='choice' id="leadership" type="checkbox"><label for="leadership">Leadership</label></li>
+
+            <li><input class ='choice' id="lying" type="checkbox"><label for="lying">Lying</label></li>
+
+            <li><input class ='choice' id="lying" type="checkbox"><label for="lying">Lying</label></li>
+
+            <li><input class ='choice' id="lying" type="checkbox"><label for="lying">Lying</label></li>
+
+            <li><input class ='choice' id="lying" type="checkbox"><label for="lying">Lying</label></li>
 
         </ul>
 
@@ -135,7 +155,7 @@
 
               console.log(picked);
               
-              var role_stats = {'data scientist':['eating','sleeping'],'data consultant':['planning','problemsolving'],'data analyst':['problemsolving'],'delivery manager':['leadership','lying']};
+              var role_stats = {'data scientist':['problemsolving','eating','sleeping'],'data consultant':['planning','problemsolving'],'data analyst':['problemsolving'],'delivery manager':['leadership','lying']};
 
              // given the choces, loop over the roles and find the one with most matches. 
               
