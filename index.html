@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Role Matcher | Worry about style later on...</title>
+    <title>Role Matcher demo</title>
 </head>
     <style>
         body {
@@ -12,7 +12,7 @@
         h1 {
           text-align:center;
           font-size:60px;
-          color:#951b81;
+          color:#951b81;          
         }
 
 
@@ -58,8 +58,8 @@
 
         
         
-        .button {
-          background-color: #4CAF50; /* Green */
+        button {
+          background-color: #c0136b; /* Green */
           border: none;
           color: white;
           padding: 15px 32px;
@@ -68,6 +68,19 @@
           display: inline-block;
           font-size: 16px;
           border-radius: 10px;
+      }
+      
+      .button {
+        background-position: center;
+        transition: background 0.8s;
+      }
+      .button:hover {
+        background: #c0136b radial-gradient(circle, transparent 1%, #d0136b 1%) center/15000%;
+      }
+      .button:active {
+        background-color: #c0136b;
+        background-size: 100%;
+        transition: background 0s;
       }
       
       input[type="checkbox"]{
@@ -244,6 +257,7 @@
               var mychoices = {};
               let picked = new Set()
               var arrayLength = dd.length;
+              
               for (var i = 0; i < arrayLength; i++) {
                   
                   mychoices[dd[i].id] = dd[i].checked
@@ -251,6 +265,10 @@
                       picked.add(dd[i].id)
                   }
                       
+              }
+              
+              if (picked.size == 0){
+                  return  0;
               }
               
               // calculate the top score from some dummy roles matrix.
@@ -289,7 +307,7 @@
 
               document.getElementById("profiles").innerHTML = shower2.join(' ');
               document.getElementById("roletext").hidden = false;
-              
+              //remove this line if you don't want the debug
               document.getElementById("role_score").innerHTML = JSON.stringify(scores);
           }
           
