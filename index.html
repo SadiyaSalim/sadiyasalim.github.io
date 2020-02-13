@@ -175,8 +175,6 @@
               }
               
               // calculate the top score from some dummy roles matrix.
-
-              
               var role_stats = {'data_scientist':['problemsolving','eating','sleeping','creativity'],'data_consultant':['planning','problemsolving'],'data_analyst':['problemsolving'],'delivery_manager':['leadership','lying','organisation']};
 
              // given the choces, loop over the roles and find the one with most matches. 
@@ -194,7 +192,6 @@
                       scores[key] = overlap.size;
                       if (overlap.size > 0) {
                           shower.push([document.getElementById(key).innerHTML,overlap.size]);     
-                          //console.log(document.getElementById(key));
                       }
                   }
               }
@@ -203,9 +200,8 @@
                   return b[1] - a[1];
               });
               var shower2 = shower.map(function(value,index) { return value[0]; })
-              console.log(shower2)
-              
-              document.getElementById("profiles").innerHTML = shower2;
+
+              document.getElementById("profiles").innerHTML = shower2.join(' ');
               
               document.getElementById("role_score").innerHTML = JSON.stringify(scores);
           }
