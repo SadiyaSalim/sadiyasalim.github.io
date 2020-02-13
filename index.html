@@ -1,5 +1,7 @@
 <html>
-<head></head>
+<head>
+    <title>Role Matcher | Worry about style later on...</title>
+</head>
     <style>
         body {
           font-family: 'Catamaran', sans-serif;
@@ -10,7 +12,7 @@
         h1 {
           text-align:center;
           font-size:60px;
-          text-shadow: #c9d6de 1px 3px;
+          color:#951b81;
         }
 
         .question {
@@ -62,17 +64,29 @@
         }
         
         
+        .button {
+          background-color: #4CAF50; /* Green */
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+      }
+        
         </style>
     <body>
-      <h1>Pick your 3 strongest attributes:</h1>
+        
+      <h1>Pick your strongest attributes:</h1>
          
         <ul class="choices">
           <li><label><input class ='choice' id="leadership" type="checkbox">Leadership</label></li>
           <li><label><input class ='choice' id="problemsolving" type="checkbox">Problem solving</label></li>
           <li><label><input class ='choice' id="planning" type="checkbox">Planning</label></li>
           <li><label><input class ='choice' id="eating" type="checkbox">Eating</label></li>
-          <li><label><input class ='choice' id="sleeping" type="checkbox">Sleep</label></li>
-          <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
+          <li><label><input class ='choice' id="sleeping" type="checkbox">Sleeping</label></li>
+          <li><label><input class ='choice' id="creative" type="checkbox">Creative</label></li>
           <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
           <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
           <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
@@ -83,11 +97,13 @@
         </ul>
 
 
-
-<button onclick="calc()">See what role you matched to!"</button>
+<center><button class="button" onclick="calc()">Click to see what role you matched to!</button></center>
 
 
 <h1>Role Scores</h1>
+
+<h4>Down here can be the sorted list, with the profiles of your roles. Zeros will be hidden.:</h4>
+
 
 <div id='role_score'>
     
