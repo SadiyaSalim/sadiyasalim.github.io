@@ -18,7 +18,7 @@
         label {
           border:1px solid #ddd;
           padding:10px;
-          margin:0 0 10px;
+          margin:0 0 0 0px;
           display:block;
           font-size:20px;
         }
@@ -38,7 +38,7 @@
 
         nav li {
           display:inline;
-          margin:10px;
+          margin:0px;
           /* border-style:solid;
           border-width:thin; */
           position:relative;
@@ -78,7 +78,10 @@
           border: 1px solid #c0136b;
        } 
       
-      
+       .box{
+           padding-left:5%;
+           width:90%;
+       }
         
         </style>
     <body>
@@ -116,18 +119,34 @@
 
 <center><button class="button" onclick="calc()">Click to see what role you matched to!</button></center>
 
-
-<h1>Role Scores</h1>
-
+<div class = 'box'>
+<p>Role Scores</p>
 <h4>Down here can be the sorted list, with the profiles of your roles. Zeros will be hidden.:</h4>
-
-
-<div id='role_score'>
-    
+<div id='role_score'>    
 </div>
 
 
-<div id="result"></div>
+<div id="data_scientist" class="panel" hidden>
+  <h2>Data Scientist!</h2>
+  <p>Something about a profile. Some more words</p>
+</div>
+
+<div id="data_consultant" class="panel" hidden>
+  <h2>Data consultant!</h2>
+  <p>Something about a profile. Some more words</p>
+</div>
+
+<div id="data_analyst" class="panel" hidden>
+  <h2>data analyst!</h2>
+  <p>Something about a profile. Some more words</p>
+</div>
+
+<div id="delivery_manager" class="panel" hidden>
+  <h2>Delivery manager!</h2>
+  <p>Something about a profile. Some more words</p>
+</div>
+
+</div>
 
       <script>
          
@@ -152,7 +171,7 @@
 
               console.log(picked);
               
-              var role_stats = {'data scientist':['problemsolving','eating','sleeping','creativity'],'data consultant':['planning','problemsolving'],'data analyst':['problemsolving'],'delivery manager':['leadership','lying','organisation']};
+              var role_stats = {'data_scientist':['problemsolving','eating','sleeping','creativity'],'data_consultant':['planning','problemsolving'],'data_analyst':['problemsolving'],'delivery_manager':['leadership','lying','organisation']};
 
              // given the choces, loop over the roles and find the one with most matches. 
               
@@ -166,6 +185,10 @@
                       // do intersection
                       let overlap = new Set([...picked].filter(x => myset.has(x)));
                       scores[key] = overlap.size;
+                      if (overlap.size > 0) {
+                          document.getElementById(key).hidden = false;     
+                          console.log('showing '+key)                     
+                      }
                   }
               }
 
