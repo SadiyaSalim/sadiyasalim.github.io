@@ -127,23 +127,29 @@
 <div id='role_score'>    
 </div>
 
+<div id = 'profiles'>
+</div>
 
-<div id="data_scientist" class="panel" hidden>
+
+</div>
+
+<div style ="visibility:hidden">
+<div id="data_scientist" class="panel">
   <h2>Data Scientist!</h2>
   <p>Something about a profile. Some more words</p>
 </div>
 
-<div id="data_consultant" class="panel" hidden>
+<div id="data_consultant" class="panel">
   <h2>Data consultant!</h2>
   <p>Something about a profile. Some more words</p>
 </div>
 
-<div id="data_analyst" class="panel" hidden>
+<div id="data_analyst" class="panel">
   <h2>data analyst!</h2>
   <p>Something about a profile. Some more words</p>
 </div>
 
-<div id="delivery_manager" class="panel" hidden>
+<div id="delivery_manager" class="panel">
   <h2>Delivery manager!</h2>
   <p>Something about a profile. Some more words</p>
 </div>
@@ -160,7 +166,6 @@
               let picked = new Set()
               var arrayLength = dd.length;
               for (var i = 0; i < arrayLength; i++) {
-                  console.log(dd[i].checked);
                   
                   mychoices[dd[i].id] = dd[i].checked
                   if (dd[i].checked){
@@ -171,7 +176,6 @@
               
               // calculate the top score from some dummy roles matrix.
 
-              console.log(picked);
               
               var role_stats = {'data_scientist':['problemsolving','eating','sleeping','creativity'],'data_consultant':['planning','problemsolving'],'data_analyst':['problemsolving'],'delivery_manager':['leadership','lying','organisation']};
 
@@ -179,6 +183,7 @@
               
               var best_role_num = 0
               var scores = {}
+              var shower = []
               for (var key in role_stats) {
                   // check if the property/key is defined in the object itself, not in parent
                   if (role_stats.hasOwnProperty(key)) {           
@@ -188,13 +193,20 @@
                       let overlap = new Set([...picked].filter(x => myset.has(x)));
                       scores[key] = overlap.size;
                       if (overlap.size > 0) {
-                          document.getElementById(key).hidden = false;     
-                          console.log('showing '+key)                     
+                          shower.push([document.getElementById(key).innerHTML,overlap.size]);     
+                          //console.log(document.getElementById(key));
                       }
                   }
               }
-
-              console.log(scores);
+              
+              shower.sort(function(a,b){
+                  return b[1] - a[1];
+              });
+              var shower2 = shower.map(function(value,index) { return value[0]; })
+              console.log(shower2)
+              
+              document.getElementById("profiles").innerHTML = shower2;
+              
               document.getElementById("role_score").innerHTML = JSON.stringify(scores);
           }
           
