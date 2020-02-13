@@ -1,0 +1,147 @@
+<html>
+<head></head>
+    <style>
+        body {
+          font-family: 'Catamaran', sans-serif;
+          color:#272625;
+          background-color:#f6ea8c;
+        }
+
+        h1 {
+          text-align:center;
+          font-size:60px;
+          text-shadow: #c9d6de 1px 3px;
+        }
+
+        .question {
+          font-size:30px;
+        }
+
+        label {
+          border:1px solid #e3e36a;
+          padding:10px;
+          margin:0 0 10px;
+          display:block;
+          font-size:20px;
+        }
+
+        label:hover {
+          background:#e3dede;
+          cursor:pointer;
+        }
+
+        ul {
+          list-style: none;
+          columns: 3;
+          -webkit-columns: 3;
+          -moz-columns: 3;
+          
+        }
+
+        nav li {
+          display:inline;
+          margin:10px;
+          /* border-style:solid;
+          border-width:thin; */
+          position:relative;
+
+        }
+        nav {
+          text-align: center;
+          /* border-style: solid;
+          border-width: thin; */
+        }
+
+        nav ul {
+          padding:inherit;
+          list-style:none;
+        }
+
+        input[type="checkbox"]{
+            padding:50px;
+        }
+        
+        
+        </style>
+    <body>
+      <h1>Pick your 3 strongest attributes:</h1>
+         
+        <ul class="choices">
+          <li><label><input class ='choice' id="leadership" type="checkbox">Leadership</label></li>
+          <li><label><input class ='choice' id="problemsolving" type="checkbox">Problem solving</label></li>
+          <li><label><input class ='choice' id="planning" type="checkbox">Planning</label></li>
+          <li><label><input class ='choice' id="eating" type="checkbox">Eating</label></li>
+          <li><label><input class ='choice' id="sleeping" type="checkbox">Sleep</label></li>
+          <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
+          <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
+          <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
+          <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
+          <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
+          <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
+          <li><label><input class ='choice' id="lying" type="checkbox">Lying</label></li>
+
+        </ul>
+
+
+
+<button onclick="calc()">See what role you matched to!"</button>
+
+
+<h1>Role Scores</h1>
+
+<div id='role_score'>
+    
+</div>
+
+
+<div id="result"></div>
+
+      <script>
+         
+          function calc() { 
+              
+              dd = Array.from(document.getElementsByClassName("choice"));
+
+              var mychoices = {};
+              let picked = new Set()
+              var arrayLength = dd.length;
+              for (var i = 0; i < arrayLength; i++) {
+                  console.log(dd[i].checked);
+                  
+                  mychoices[dd[i].id] = dd[i].checked
+                  if (dd[i].checked){
+                      picked.add(dd[i].id)
+                  }
+                      
+              }
+              
+              // calculate the top score from some dummy roles matrix.
+
+              console.log(picked);
+              
+              var role_stats = {'data scientist':['eating','sleeping'],'data consultant':['planning','problemsolving'],'data analyst':['problemsolving'],'delivery manager':['leadership','lying']};
+
+             // given the choces, loop over the roles and find the one with most matches. 
+              
+              var best_role_num = 0
+              var scores = {}
+              for (var key in role_stats) {
+                  // check if the property/key is defined in the object itself, not in parent
+                  if (role_stats.hasOwnProperty(key)) {           
+                      // console.log(key, role_stats[key]);
+                      var myset = new Set(role_stats[key]);
+                      // do intersection
+                      let overlap = new Set([...picked].filter(x => myset.has(x)));
+                      scores[key] = overlap.size;
+                  }
+              }
+
+              console.log(scores);
+              document.getElementById("role_score").innerHTML = JSON.stringify(scores);
+          }
+          
+      </script>
+     </body>
+
+    
+</html>
