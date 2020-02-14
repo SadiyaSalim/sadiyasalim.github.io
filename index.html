@@ -98,6 +98,7 @@
       input[type="checkbox"]:checked+label{ 
           font-weight: bold;
           border: 1px solid #c0136b;
+          font-size:20px;
        } 
       
        .box{
@@ -309,7 +310,7 @@
               shower.sort(function(a,b){
                   return b[1] - a[1];
               });
-              var shower2 = shower.map(function(value,index) { return value[0]; })
+              var shower2 = shower.map(function(value,index) { return value[0];})
               
               if (shower2.length == 0){
                   return  0;
