@@ -5,12 +5,18 @@
     <link rel="icon" 
           type="image/png" 
           href="img/favicon.png">
+    <meta charset="utf-8">
     
     <link rel="apple-touch-icon" href="img/touch-icon-iphone.png">    
     <meta name="apple-mobile-web-app-capable" content="yes">
     
 </head>
     <style>
+        * {
+          margin: 0;
+          padding: 0;
+        }
+        
         body {
           font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
           color:#272625;
@@ -20,7 +26,25 @@
         h1 {
           text-align:center;
           font-size:60px;
-          color:#951b81;          
+          color:#951b81;
+          background: -webkit-linear-gradient(225deg,#672482, #ae1c63);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+                 
+        }
+        
+        h2{
+            color:#951b81;
+            background: -webkit-linear-gradient(225deg,#672482, #ae1c63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h3{
+            color:#951b81;
+            background: -webkit-linear-gradient(225deg,#672482, #ae1c63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
 
@@ -37,12 +61,20 @@
           cursor:pointer;
         }
 
-        ul {
+        p{
+            padding:10px;
+        }
+        
+        ul{
+            padding-left:40px;
+        }
+
+        ul.choices {
           list-style: none;
           columns: 3;
           -webkit-columns: 3;
           -moz-columns: 3;
-          
+          padding:40px;
         }
 
         nav li {
@@ -121,7 +153,6 @@
        .column {
          float: left;
          padding: 10px;
-         height: 300px; /* Should be removed. Only for demonstration */
        }
 
        .left {
@@ -130,6 +161,7 @@
 
        .right {
          width: 65%;
+         
        }
 
        /* Clear floats after the columns */
@@ -140,7 +172,10 @@
        }
 
 
-
+       div.box{
+           display:block;
+           margin:5px;
+       }
        
        
         </style>
@@ -152,30 +187,62 @@
 
         <ul class="choices">
 
+<li><input class ='choice' id="presentinginformation" type="checkbox"><label for="presentinginformation">Presenting Information</label></li>
 
-        <li><input class ='choice' id="problemsolving" type="checkbox"><label for="problemsolving">Problem Solving</label></li>
+<li><input class ='choice' id="coachingothers" type="checkbox"><label for="coachingothers">Coaching others</label></li>
 
-        <li><input class ='choice' id="lying" type="checkbox"><label for="lying">Lying</label></li>
+<li><input class ='choice' id="logicalreasoning" type="checkbox"><label for="logicalreasoning">Logical Reasoning</label></li>
 
-        <li><input class ='choice' id="creativity" type="checkbox"><label for="creativity">Creativity</label></li>
+<li><input class ='choice' id="curiosity" type="checkbox"><label for="curiosity">Curiosity</label></li>
 
-        <li><input class ='choice' id="planning" type="checkbox"><label for="planning">Planning</label></li>
+<li><input class ='choice' id="motivatingothers" type="checkbox"><label for="motivatingothers">Motivating others</label></li>
 
-        <li><input class ='choice' id="organisation" type="checkbox"><label for="organisation">Organisation</label></li>
+<li><input class ='choice' id="persistence" type="checkbox"><label for="persistence">Persistence</label></li>
 
-        <li><input class ='choice' id="leadership" type="checkbox"><label for="leadership">Leadership</label></li>
+<li><input class ='choice' id="decisionmaking" type="checkbox"><label for="decisionmaking">Decision Making</label></li>
 
-        <li><input class ='choice' id="flexibility" type="checkbox"><label for="flexibility">Flexibility</label></li>
+<li><input class ='choice' id="problemsolving" type="checkbox"><label for="problemsolving">Problem Solving</label></li>
 
-        <li><input class ='choice' id="handlepressure" type="checkbox"><label for="handlepressure">Handle Pressure</label></li>
+<li><input class ='choice' id="statisticalanalysis" type="checkbox"><label for="statisticalanalysis">Statistical analysis</label></li>
 
-        <li><input class ='choice' id="initiative" type="checkbox"><label for="initiative">Initiative</label></li>
+<li><input class ='choice' id="storytelling" type="checkbox"><label for="storytelling">Story Telling</label></li>
 
-        <li><input class ='choice' id="teamwork" type="checkbox"><label for="teamwork">Teamwork</label></li>
+<li><input class ='choice' id="visualising" type="checkbox"><label for="visualising">Visualising</label></li>
 
-        <li><input class ='choice' id="communication" type="checkbox"><label for="communication">Communication</label></li>
+<li><input class ='choice' id="programming" type="checkbox"><label for="programming">Programming</label></li>
 
-        <li><input class ='choice' id="technicalliteracy" type="checkbox"><label for="technicalliteracy">Technical literacy</label></li>
+<li><input class ='choice' id="design" type="checkbox"><label for="design">Design</label></li>
+
+<li><input class ='choice' id="organised" type="checkbox"><label for="organised">Organised</label></li>
+
+<li><input class ='choice' id="communication" type="checkbox"><label for="communication">Communication</label></li>
+
+<li><input class ='choice' id="creativethinking" type="checkbox"><label for="creativethinking">Creative thinking</label></li>
+
+<li><input class ='choice' id="teamwork" type="checkbox"><label for="teamwork">Teamwork</label></li>
+
+<li><input class ='choice' id="analyticalthinking" type="checkbox"><label for="analyticalthinking">Analytical thinking</label></li>
+
+<li><input class ='choice' id="research" type="checkbox"><label for="research">Research</label></li>
+
+<li><input class ='choice' id="listening" type="checkbox"><label for="listening">Listening</label></li>
+
+<li><input class ='choice' id="facilitating" type="checkbox"><label for="facilitating">Facilitating</label></li>
+
+<li><input class ='choice' id="stakeholdermanagement" type="checkbox"><label for="stakeholdermanagement">Stakeholder management</label></li>
+
+<li><input class ='choice' id="creativity" type="checkbox"><label for="creativity">Creativity</label></li>
+
+<li><input class ='choice' id="empathatic" type="checkbox"><label for="empathatic">Empathatic</label></li>
+
+<li><input class ='choice' id="logicalthinking" type="checkbox"><label for="logicalthinking">Logical Thinking</label></li>
+
+<li><input class ='choice' id="leadership" type="checkbox"><label for="leadership">Leadership</label></li>
+
+<li><input class ='choice' id="coordination" type="checkbox"><label for="coordination">Coordination</label></li>
+
+        
+        
 
         </ul>
 
@@ -184,7 +251,7 @@
 
 <div class = 'box'>
 
-<h3 id='roletext' hidden>You could be well suited to becoming a...</h3>
+<h3 id='roletext' hidden style='padding-bottom:30px'>You could be well suited to becoming a...</h3>
 <div id = 'profiles'>
 </div>
 
@@ -193,64 +260,328 @@
 
 <div style ="display:none">
     
-<div id="data_scientist" class="panel">
-  <h2>Data Scientist!</h2>
-  
-  <div class="row">
-    <div class="column left" >
-  <img src = "img/Data_science_Experiment@4x.png" height="250px">
-    </div>
-    <div class="column right" >
-      <h2>About this role</h2>
-      <p>Something about a profile. Some more words</p>
-      <p>Some text..</p>
-    </div>
-  </div>
-
-</div>
 
 
-<div id="data_consultant" class="panel">
-  <h2>Data consultant!</h2>
-  <div class="row">
-    <div class="column left" >
-  <img src = "img/People_Presentation@4x.png" height="250px">
-    </div>
-    <div class="column right" >
-      <h2>About this role</h2>
-      <p>Something about a profile. Some more words</p>
-      <p>Some text..</p>
-    </div>
-  </div>
-</div>
 
-<div id="data_analyst" class="panel">
-  <h2>Data analyst!</h2>
+<!---start top-->
+<div id="blank_role" class="panel">
+    <div class='box'>
+  <h2>Blank</h2>
   <div class="row">
     <div class="column left" >
   <img src = "img/Analytics_Box_and_whisker@4x.png" height="250px">
     </div>
-    <div class="column right" >
       <h2>About this role</h2>
       <p>Something about a profile. Some more words</p>
       <p>Some text..</p>
-    </div>
   </div>
-</div>
+</div></div>
 
-<div id="delivery_manager" class="panel">
-  <h2>Delivery manager!</h2>
+<!---start top-->
+
+<div id="project_manager" class="panel">
+    <div class='box'>
+    
+  <h2>Project Manager</h2>
   <div class="row">
     <div class="column left" >
   <img src = "img/People_Delegate@4x.png" height="250px">
     </div>
     <div class="column right" >
-      <h2>About this role</h2>
-      <p>Something about a profile. Some more words</p>
-      <p>Some text..</p>
+
+
+<p>Hi, I’m Nicola and I am an IT Project Manager. My role is packed full of variety from lots of teamwork and problem solving to managing people and plans. My role on a project team is to lead the team to success. My team usually comprises of data architects, data engineers, data scientists, software developers, testers, and information designers. An example of a project could be creating and launching a new mobile app or game </p>
+
+<p>My day typically starts by reviewing the plan of activities for the day ahead and then a catch up with my project team to ensure everyone understands what needs to be achieved that day and to identify any problems that may stop or impact the project and/or team. Once the team briefing is over, I then make sure I get the right people together to solve any problems and communicate any important updates to my customer, so they are aware of how the team is progressing and any problems. One of the highlights of my role is organising the team celebrations once the projects are completed.</p>
+
+<p>Skills:</p>
+<ul>
+<li>Teamwork</li>
+<li>Problem Solving</li>
+<li>Leadership</li>
+<li>Coordination</li>
+<li>Communication</li>
+<li>Coaching and Motivating others</li>
+<li>Organisational</li>
+</ul>
+    
+<p>The subjects I chose to study were Business Studies, Psychology and PE– so you don’t always need to be a Scientist or a Mathematician to have a career in Technology.</p>
+ 
     </div>
   </div>
-</div>
+</div></div>
+
+
+
+<!---start top-->
+<div id="technical_solution_architect" class="panel">
+    <div class='box'>
+    
+  <h2>Technical Solution Architect</h2>
+  <div class="row">
+    <div class="column left" >
+  <img src = "img/Data_Data_model@4x.png" height="250px">
+    </div>
+    <div class="column right" >
+
+
+<p>Hi, my name is Praji and I am a Technical Solution Architect. My role is very similar to an Architect who builds beautiful homes, except I build beautiful software systems. The systems I design, and architect help everyday people, like your Mum’s and Dad’s fulfil their banking needs from the comforts of their home – like using their phone or iPad to move money from their bank account into a savings account – now you know why they are on their mobile phones so much ! An Architects job is to make sure the system is designed properly before the programmers can write code to build it, just like an Architect will have detailed technical drawings of a house before the builders start laying the foundations and bricks.</p>
+<p> </p>
+<p>A good Architect benefits from a good mix of technical and personal skills. Not only do they have to find a technical solution to a problem, but they have to resolve disagreements and make a final decision when there are 2 ways to solve a problem and still recommend the right solution. Good communication skills are also required. It is my responsibility to make sure the programmers know exactly what to build and how. If I don’t communicate this properly we will end up building the wrong think – can you image someone wanting their house Architect and team to design and build them a 4 bedroom, 2 story house and what gets built is a 1 bedroom flat ! </p>
+
+<p>Skills:</p>
+<ul>
+<li>Design</li>
+<li>Programming</li>
+<li>Reasoning and Decision Making</li>
+<li>Communication</li>
+<li>Analytical thinking </li>
+<li>Leadership</li>
+</ul>
+
+<p>I was reasonably good at Maths and Science at school and choose to study Math, Physics, Chemistry and Biology at A-level, keeping my options pretty wide open until the last moment. I eventually choose to do a degree in Engineering with Electronics and Telecommunication. </p>
+
+
+
+    </div>
+  </div>
+</div></div>
+
+<!---start top-->
+
+
+<!---start top-->
+<div id="data_scientist" class="panel">
+    <div class='box'>
+    
+  <h2>Data Scientist!</h2>
+  <div class="row">
+    <div class="column left" >
+  <img src = "img/Data_science_Experiment@4x.png" height="250px">
+    </div>
+    <div class="column right" >
+<p>Hi, I am Paulina and I am a Data Scientist. In my everyday role I am continually problem solving which I love. I use my analytical, statistical, and programming skills to collect, analyse, and interpret large amounts of information (data). I use this information to develop solutions to solve problems or improve the way we do things – data scientists try to make life simpler and better. Data science is used every day to detect credit card fraud. Predictive models have been created by data scientists to support cancer diagnosis, so it is a very exciting field to work in.</p>
+
+<p>Being a data scientist, I have built a wide range of technical competencies including coding, machine learning, analysing and predicting trends and using tools to produce reports or visualisations. What I love about being a data scientist is that no problem or solution is exactly the same, so my job is never boring and with each problem and challenge l learn and discover more and more. What I enjoy the most is working with a variety of people and presenting my solutions to others. </p>
+<p> </p>
+<p>Skills:</p>
+<ul>
+<li>Logical Reasoning</li>
+<li>Problem Solving</li>
+<li>Programming</li>
+<li>Statistical analysis</li>
+<li>Presenting Information</li>
+<li>Communication</li>
+<li>Organisational</li>
+</ul>
+
+<p>The subjects I chose to study were Mathematics, English and Geography so I chose a mixture of arts and sciences. </p>
+
+    </div>
+  </div>
+</div></div>
+
+<!---start top-->
+
+<!---start top-->
+<div id="data_consultant" class="panel">
+    <div class='box'>
+    
+  <h2>Data Consultant!</h2>
+  <div class="row">
+    <div class="column left" >
+  <img src = "img/People_Presentation@4x.png" height="250px">
+    </div>
+    <div class="column right" >
+
+<p>My name is Camilla, and I am a Consultant. It is my role to show people the art of the possible in data. I work for a data consultancy, which works in a similar way to a doctor - however instead of making people feel better, we help businesses function better; help them make the quality of their data better (for example) and listen to their problems and advise them on data solutions that could help them alleviate those problems.  </p>
+
+<p>In my role I advise businesses on data solutions. I help them to understand the pro’s and con’s of each solution and the value it will or won’t give them. If they decide they want or like the proposed data solution, I then work with the project manager to build out the plan on how we implement the data solution for the client and help work out how long will it take, how much will it cost and who we will need on the team. Once the project is agreed I then work on that project until the solution is successfully implemented. </p>
+
+<p>I love my job because of the variety of work I get to do. My projects usually last between three to six months, so I’m always learning about different businesses and data concepts. Some examples of the types of projects I have worked on recently include implementing a data solution which helps a well-known bank to comply with a new data quality regulation. </p>
+
+<p>As a consultant I get involved in future thinking. For example, how can clients use Cloud technology to solve their business problems; Face recognition software; analytics technology to identify and prevent fraud. Being a consultant is all about thinking to the future which makes it exciting as you are dealing with unchartered water a lot of the time. </p>
+
+<p>Skills:</p>
+<ul>
+<li>Stakeholder management</li>
+<li>Teamwork</li>
+<li>Communication</li>
+<li>Organisation</li>
+<li>Problem solving</li>
+<li>Research</li>
+</ul>
+
+<p>I studied Economics, English Literature and Physical Education at A-level, and at university I studied Information Management and Business Studies.</p>
+
+
+    </div>
+  </div>
+</div></div>
+
+<!---start top-->
+
+
+<div id="software_developer" class="panel">
+    <div class='box'>
+    
+  <h2>Software Developer</h2>
+  <div class="row">
+    <div class="column left" >
+  <img src = "img/software_eng@4x.png" height="250px">
+    </div>
+    <div class="column right" >
+<p>My name is Rose and I'm a Software Developer. My role means I get to turn all the amazing apps and technology ideas into reality! There's a lot of variety in software to work on; I've worked on websites, data visualisation and air traffic control systems; there's always something new to learn. </p>
+
+<p>I currently work in a team of developers, designers, testers, software architects and product managers. Together with them, I plan what part of the software to work on, how to implement it and how to test that it works exactly as we expect it to. Once we are happy with the plan, I will write the code to make it happen. It can be challenging because no two features are exactly the same, but that also means I'll not be bored. One of the most satisfying parts of being a developer is seeing the results of all your efforts, and your team's efforts, come together and work.</p>
+
+<p>Skills </p>
+<ul>
+<li>Programming </li>
+<li>Teamwork</li>
+<li>Communication</li>
+<li>Problem solving</li>
+<li>Creative thinking</li>
+<li>Persistence</li>
+</ul>
+
+<p>The subjects I studied at school were Maths, Biology, Chemistry, Physics, Geography, English Language and Literature. I went to secondary school in the Netherlands, so I also studied Dutch as well as German.</p>
+<p>I too went onto university where I did a degree in Literature and Creative Writing but decided to switch degrees and ended up getting my BSc in Computer Science! I am still very passionate about creativity and I apply those creativity skills in my role as a developer too. </p>
+
+    </div>
+  </div>
+</div></div>
+<!---start top-->
+
+<!---start top-->
+
+
+<div id="test_engineer" class="panel">
+    <div class='box'>
+    
+  <h2>Test Engineer</h2>
+  <div class="row">
+    <div class="column left" >
+  <img src = "img/Dashboard_Operations@4x.png" height="250px">
+    </div>
+    <div class="column right" >
+<p>My name is Sharon, I am a Test Engineer in a Building Society.  In my role I test all the changes to the building societies technology and processes. For example, before the building society could allow 15 million customers the opportunity to manage their savings account via our website, I had to lead and work as part of a team to test and verify that everything worked correctly.</p>
+
+<p>In my day to day role, I lead a team and have to plan the levels of testing we need to do, for which project and who will carry out the testing work. One of my favourite part of my job is when I get to talk to the people (called Users, Clients or Customers) who will be using the new system, to make sure what we think they want, is actually what they want - so good listening and facilitation skills are very important. A critical part of my role is trying my hardest to find errors or faults – we testers call these defects. We testers love finding faults or errors as we can then work with other teams to try and find out why the fault or error is occurring. My role is very important as we have to make sure all our customers data is safe and that they can easily access their financial information through the internet, mobile phones and tablets without encountering problems. As a tester a logical and inquisitive mind is a great asset – I love trying to break things.</p>
+
+<p>Skills:</p>
+<ul>
+<li>Logical Thinking</li>
+<li>Communication</li>
+<li>Teamwork</li>
+<li>Good Listening and Facilitation </li>
+</ul>
+<p>The subjects I chose to study were English language, Maths, English literature, Integrated Science, History, Geography and Social Science 
+</p>
+    </div>
+  </div>
+</div></div>
+<!---start top-->
+
+<!---start top-->
+
+
+<div id="information_designer" class="panel">
+    <div class='box'>
+    
+  <h2>Information Designer</h2>
+  <div class="row">
+    <div class="column left" >
+  <img src = "img/Design_Tools@4x.png" height="250px">
+    </div>
+    <div class="column right" >
+
+<p>My name is Emily, I’m an Information Designer. I find ways to visually present information and data so that that people can easily and quickly understand it. An important part of my role is listening to people and asking questions to find out what information they need to have to do their job well. I use this to decide how to arrange information on a dashboard or page, which graphs to use, and how to draw attention to the most important pieces of information. I work closely with the Project Manager and software developers (who make my designs work with real data). I love pulling together all the information I get from my costumers I am designing information for and my team and figuring out how to show the information in the best possible way – bouncing ideas off other people always helps! </p>
+
+<p>Skills: </p>
+<ul>
+<li>Design for visual communication</li>
+<li>Creativity</li>
+<li>Teamwork</li>
+<li>Listening</li>
+<li>Problem solving</li>
+</ul>
+<p>I chose to study Maths, Further Maths, Sociology and French before studying for a degree in French. Following my degree I took a postgraduate course in Design for Visual Communication, so it took me a while to decide that Information Design was the thing for me. </p>
+
+    </div>
+  </div>
+</div></div>
+<!---start top-->
+
+<!---start top-->
+
+
+<div id="risk_modeller" class="panel">
+    <div class='box'>
+  <h2>Risk Modeller</h2>
+  <div class="row">
+    <div class="column left" >
+  <img src = "img/Finance_Regulation@4x.png" height="250px">
+    </div>
+    <div class="column right" >
+<p>My name is Liz, and I’m a Risk Modeller. In my role I build and use models which help people to understand where Nationwide Building Society might lose money (e.g. by giving people loans that they then can’t pay back). A model is just a way of representing something and I use data, some maths, and knowledge of how things work in real life to do this. What I love about my role is that I get to learn about lots of different things all the time, solve problems for people and provide insight for my colleagues so that they understand things better too.</p>
+<p> </p>
+<p>I use communication skills to understand the business process in the first place (and to explain the numbers that come out of the model), logical reasoning, maths and statistics to decide how to represent the process, problem solving and coding skills to build the model, and team work and organisational skills to make sure we get things done on time!</p>
+
+<p>Skills: </p>
+<ul>
+<li>Logical Reasoning</li>
+<li>Problem Solving</li>
+<li>Programming</li>
+<li>Teamwork</li>
+<li>Organisational Skills</li>
+<li>Listening</li>
+</ul>
+
+<p>I studied maths (plus a bit of further maths) and science at A-level and then did a degree in Physics.</p>
+
+    </div>
+  </div>
+</div></div>
+
+<!---start top-->
+
+
+
+<!---start top-->
+
+
+<div id="data_journalist" class="panel">
+    <div class='box'>
+  <h2>Data Journalist</h2>
+  <div class="row">
+    <div class="column left" >
+  <img src = "img/General_Open_book@4x.png" height="250px">
+    </div>
+    <div class="column right" >
+<p>My name is Isabelle, and I am a Data Journalist. Just like a journalist interviews people, a data journalist questions a dataset. In my role I look for interesting stories in the data but instead of writing articles, I draw charts and graphs.</p>
+<p> </p>
+<p>In my day to day role, I work with a team of Data Scientists and Data Engineers as well as colleagues from across my company. My goal is to create content which links insights from different data sources and reports to create a story and then telling this story to help senior leaders in my company make important decisions. Sometimes there is too much data and so part of my job is to highlight the right content for the audience – and do this in a user friendly and explainable way. </p>
+<p> </p>
+<p>Keep in mind that data journalism is a mindset, not a finality, therefore everyone can do it, you included! Just like punk enabled access to music to people who were not from a musical background, data journalism enables access to data visualisation to people who are not from a graphic design / statistician background. Put simply: Data journalism is for everyone.</p>
+
+
+<p>Skills</p>
+<ul>
+<li>Creativity</li>
+<li>Story Telling</li>
+<li>Listening</li>
+<li>Curiosity</li>
+<li>Empathy – be able to relate to people</li>
+</ul>
+
+<p>I chose to study Maths, Creative Writing and Sciences at school. I then went on to study Storytelling and Design and Experimental Statistics in more detail before moving into a career in Data Journalism.</p>
+
+    </div>
+  </div>
+</div></div>
+
+<!---start top-->
 
 </div>
 
@@ -277,16 +608,46 @@
               }
               
 
+
+              ['analyticalthinking',
+               'coachingothers',
+               'communication',
+               'coordination',
+               'creativethinking',
+               'creativity',
+               'curiosity',
+               'decisionmaking',
+               'design',
+               'empathatic',
+               'facilitating',
+               'leadership',
+               'listening',
+               'logicalreasoning',
+               'logicalthinking',
+               'motivatingothers',
+               'organised',
+               'persistence',
+               'presentinginformation',
+               'problemsolving',
+               'programming',
+               'research',
+               'stakeholdermanagement',
+               'statisticalanalysis',
+               'storytelling',
+               'teamwork',
+               'visualising']
               
               // calculate the top score from some dummy roles matrix.
               
               //Problem Solving','Lying','Creativity','Planning','Organisation','Leadership','Flexibility', 'Handle Pressure', 'Initiative', 'Teamwork' , 'Communication', 'Computer and technical literacy
               
               var role_stats = {
-                  'data_scientist':['problemsolving','creativity','technicalliteracy'],
-              'data_consultant':['planning','problemsolving','technicalliteracy','communication'],
-                  'data_analyst':['problemsolving','flexibility','technicalliteracy'],
-                  'delivery_manager':['leadership','lying','organisation','teamwork','communication']};
+              'data_consultant':['planning','problemsolving','technicalliteracy','communication'], 'project_manager':['teamwork','coachingothers','leadership','coordination','communication','motivatingothers','organised'], 'technical_solution_architect':['design','programming','logicalreasoning','decisionmaking','communication','leadership'], 'data_scientist':['logicalreasoning','problemsolving','programming','statisticalanalysis','communication','presentinginformation','organised'], 'data_consultant':['stakeholdermanagement','teamwork','communication','organised','problemsolving','research'], 'software_developer':['programming','teamwork','communication','problemsolving','creativethinking','persistence'],
+'test_engineer':['teamwork','communication','listening','facilitating'],           'information_designer':['design','teamwork','creativity','listening','problemsolving','visualising','creativity'],              'risk_modeller':['logicalreasoning','teamwork','listening','organised','problemsolving','programming'],
+'data_journalist':['listening','communication','creativity','curiosity','empathatic','storytelling'],
+                   
+              
+              };
 
              // given the choces, loop over the roles and find the one with most matches. 
               
