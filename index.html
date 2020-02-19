@@ -27,6 +27,7 @@
           text-align:center;
           font-size:60px;
           color:#951b81;
+          margin-top:15px;
           background: -webkit-linear-gradient(225deg,#672482, #ae1c63);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -74,7 +75,7 @@
           columns: 3;
           -webkit-columns: 3;
           -moz-columns: 3;
-          padding:40px;
+          padding:25px;
           text-align: center;
         }
 
@@ -156,7 +157,7 @@
 
        .left {
          width: 25%;
-         padding:15px;
+         margin-right:20px;
        }
 
        .right {
@@ -231,10 +232,14 @@
         </ul>
 
 
-<div id='button_box' style='margin-left:35%;'>
-    <button id='clear_btn' class="button" onclick="reset_app()"  style='background-color:#ffb6c1;margin-right:20px;visibility:hidden;'>Clear all</button>
+    
+    <center>
     <button class="button" onclick="calc()">Click to see what role you matched to!</button>
-</div>
+</center>
+    <center>
+    <button id='clear_btn' class="button" onclick="reset_app()"  style='background-color:#ffb6c1;margin:10px;visibility:hidden;'>Clear all</button>
+</center>
+
 
 <div class = 'box'>
 <h3 id='roletext' hidden style='padding-bottom:30px'>You could be well suited to becoming a...</h3>
