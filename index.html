@@ -20,18 +20,20 @@
         body {
           font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
           color:#272625;
+          background-color:#F0F4FA
         }
         
 
         h1 {
           text-align:center;
-          font-size:60px;
+          font-size:20pt;
           color:#951b81;
           margin-top:15px;
+          font-style:regular;
           background: -webkit-linear-gradient(225deg,#672482, #ae1c63);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-                 
+          font-weight:normal;
         }
         
         h2{
@@ -50,11 +52,20 @@
 
 
         label {
-          border:1px solid #ddd;
-          padding:10px;
-          margin:0 0 0 0px;
+          padding-top:14px;
+          padding-bottom:14px;
+          font-weight: 500;
+          margin-left:20px;
+          margin-right:20px;
+          margin-top:6px;
           display:block;
-          font-size:20px;
+          font-size:16px;
+          color:#951B81;
+          background-color:white;
+          border-radius: 25px;
+          box-shadow: 5px 5px 6px rgba(0, 0, 0, .1);
+          border: 1.5pt solid transparent;
+          border-radius: 15px;
         }
 
         label:hover {
@@ -70,57 +81,45 @@
             padding-left:40px;
         }
 
-        ul.choices {
-          list-style: none;
-          columns: 3;
-          -webkit-columns: 3;
-          -moz-columns: 3;
-          padding:25px;
-          text-align: center;
-        }
 
-        nav li {
-          display:inline;
-          margin:0px;
-          /* border-style:solid;
-          border-width:thin; */
-          position:relative;
 
-        }
-        nav {
-          text-align: center;
-          /* border-style: solid;
-          border-width: thin; */
-        }
-
-        nav ul {
-          padding:inherit;
-          list-style:none;
-        }
         
         button {
-          background-color: #c0136b; /* Green */
+          background-color: #E6007E; 
           border: none;
           color: white;
           padding: 15px 32px;
           text-align: center;
           text-decoration: none;
           display: inline-block;
-          font-size: 16px;
-          border-radius: 10px;
+          font-size: 15px;
+          border-radius: 15px;
+          
       }
       
       .button {
         background-position: center;
         transition: background 0.8s;
       }
-      .button:hover {
-        background: #c0136b radial-gradient(circle, transparent 1%, #d0136b 1%) center/15000%;
-      }
+
+
       .button:active {
         background-color: #c0136b;
         background-size: 100%;
         transition: background 0s;
+      }
+      
+      
+      ul.choices {
+        list-style: none;
+        columns: 3;
+        -webkit-columns: 3;
+        -moz-columns: 3;
+        text-align: center;
+         column-gap: 40px;
+         margin-bottom:25px;
+         padding-bottom:25px;
+
       }
       
       input[type="checkbox"]{
@@ -128,22 +127,17 @@
       }
       
       input[type="checkbox"]:checked+label{ 
-          font-weight: bold;
-          border: 1px solid #c0136b;
-          font-size:20px;
+          font-weight: 500;
+          border: 2px solid #E6007E;
+          color:#E6007E;
        } 
       
-       .box{
-           padding-left:5%;
-           width:90%;
-       }
-        
-        
-        
+
+            
        div.logo {
            position: absolute;
-           height:100px;
-           width:200px;
+           height:60px;
+           width:160px;
            left :50px;
            top:10px;
            margin:10px;
@@ -173,14 +167,43 @@
        }
 
 
+       #profiles > div > div > div.column.right > h2{
+           padding:10px;
+           font-size:20pt;
+           font-weight:500;
+       }
+       
        div.box{
+           background-color:white;
            display:block;
            margin:5px;
+           width:100%;
+           margin-top:30px;
+           padding:0px;
+       }
+       
+       #profiles > div {
+           background-color:white;
        }
        
        
+       button#clear_btn{
+           background-color:transparent;
+           margin-top:10px;
+           border: 2px solid #E6007E;
+           color:#E6007E;
+           border-radius: 15px;
+           
+       }
+       
+       #profiles > div > div > div.column.left > img{
+           float:right;
+           
+       }
+       
         </style>
     <body>
+        <div class='top_bit'>
         <div class="logo"><img src = "img/logo.svg"></div>
         
       <h1 style='padding-top:70px'>Pick your strongest attributes:</h1>
@@ -233,12 +256,13 @@
     <button class="button" onclick="calc()">Click to see what role you matched to!</button>
 </center>
     <center>
-    <button id='clear_btn' class="button" onclick="reset_app()"  style='background-color:#ffb6c1;margin:10px;visibility:hidden;'>Clear all</button>
+    <button id='clear_btn' class="button" onclick="reset_app()"  style='visibility:hidden;'>Clear all</button>
 </center>
 
+</div>
 
 <div class = 'box'>
-<h3 id='roletext' hidden style='padding-bottom:30px'>You could be well suited to becoming a...</h3>
+<h3 id='roletext' hidden style='padding-bottom:30px;padding-top:30px;text-align: center;'>You could be well suited to becoming a...</h3>
 <div id = 'profiles'>
 </div>
 
@@ -252,13 +276,13 @@
 <div id="project_manager" class="panel">
     <div class='box'>
     
-  <h2>Project Manager</h2>
   <div class="row">
     <div class="column left" >
-  <img src = "img/People_Delegate@4x.png" height="250px">
+  <img src = "img/People_Delegate@4x.png" height="150px">
     </div>
     <div class="column right" >
 
+  <h2>Project Manager</h2>
 
 <p>Hi, I’m Nicola and I am a Project Manager. My role is packed full of variety from lots of teamwork and problem solving to managing people and plans. My role on a project team is to lead the team to success. My team usually comprises of data architects, data engineers, data scientists, software developers, testers, and information designers. An example of a project could be creating and launching a new mobile app or game.</p>
 
@@ -284,13 +308,13 @@
 <div id="technical_solution_architect" class="panel">
     <div class='box'>
     
-  <h2>Technical Solution Architect</h2>
   <div class="row">
     <div class="column left" >
-  <img src = "img/Data_Data_model@4x.png" height="250px">
+  <img src = "img/Data_Data_model@4x.png" height="150px">
     </div>
     <div class="column right" >
 
+  <h2>Technical Solution Architect</h2>
 
 <p>Hi, I’m Praji and I am a Technical Solution Architect. My role is very similar to an Architect who builds beautiful homes, except I build beautiful software systems. The systems I design, and architect help everyday people, like your Mum’s and Dad’s fulfil their banking needs from the comforts of their home – like using their phone or iPad to move money from their bank account into a savings account – now you know why they are on their mobile phones so much ! An Architects job is to make sure the system is designed properly before the programmers can write code to build it, just like an Architect will have detailed technical drawings of a house before the builders start laying the foundations and bricks.
 </p>
@@ -321,12 +345,13 @@
 <div id="data_scientist" class="panel">
     <div class='box'>
     
-  <h2>Data Scientist!</h2>
   <div class="row">
     <div class="column left" >
-  <img src = "img/Data_science_Experiment@4x.png" height="250px">
+  <img src = "img/Data_science_Experiment@4x.png" height="150px">
     </div>
     <div class="column right" >
+        <h2>Data Scientist!</h2>
+        
 <p>Hi, I’m Paulina and I am a Data Scientist. In my everyday role I am continually problem solving which I love. I use my analytical, statistical, and programming skills to collect, analyse, and interpret large amounts of information (data). I use this information to develop solutions to solve problems or improve the way we do things – data scientists try to make life simpler and better. Data science is used every day to detect credit card fraud. Predictive models have been created by data scientists to support cancer diagnosis, so it is a very exciting field to work in.</p>
 
 <p>Being a data scientist, I have built a wide range of technical competencies including coding, machine learning, analysing and predicting trends and using tools to produce reports or visualisations. What I love about being a data scientist is that no problem or solution is exactly the same, so my job is never boring and with each problem and challenge l learn and discover more and more. What I enjoy the most is working with a variety of people and presenting my solutions to others. </p>
@@ -351,12 +376,12 @@
 <div id="data_consultant" class="panel">
     <div class='box'>
     
-  <h2>Data Consultant!</h2>
   <div class="row">
     <div class="column left" >
-  <img src = "img/People_Presentation@4x.png" height="250px">
+  <img src = "img/People_Presentation@4x.png" height="150px">
     </div>
     <div class="column right" >
+  <h2>Data Consultant!</h2>
 
 <p>Hi, I’m Camilla, and I am a Consultant. My role works in a similar way to a doctor - however instead of making people feel better, I help businesses function better and listen to their problems and advise them on data and technology solutions that could help them solve those problems.  </p>
 
@@ -387,12 +412,13 @@
 <div id="software_developer" class="panel">
     <div class='box'>
     
-  <h2>Software Developer</h2>
   <div class="row">
     <div class="column left" >
-  <img src = "img/software_eng@4x.png" height="250px">
+  <img src = "img/software_eng@4x.png" height="150px">
     </div>
     <div class="column right" >
+        <h2>Software Developer</h2>
+        
 <p>Hi, I’m Rose and I'm a Software Developer. My role means I get to turn all the amazing apps and technology ideas into reality! There's a lot of variety in software to work on; I've worked on websites, data visualisation and air traffic control systems; there's always something new to learn. </p>
 
 <p>I currently work in a team of developers, designers, testers, software architects and product managers. Together with them, I plan what part of the software to work on, how to implement it and how to test that it works exactly as we expect it to. Once we are happy with the plan, I will write the code to make it happen. It can be challenging because no two features are exactly the same, but that also means I'll not be bored. One of the most satisfying parts of being a developer is seeing the results of all your efforts, and your team's efforts, come together and work.</p>
@@ -419,12 +445,13 @@
 <div id="test_engineer" class="panel">
     <div class='box'>
     
-  <h2>Test Engineer</h2>
   <div class="row">
     <div class="column left" >
-  <img src = "img/Dashboard_Operations@4x.png" height="250px">
+  <img src = "img/Dashboard_Operations@4x.png" height="150px">
     </div>
     <div class="column right" >
+        <h2>Test Engineer</h2>
+        
 <p>Hi, I’m Sharon, I am a Test Engineer.  In my role I test solutions and any changes to those solutions. For example, before the building society could allow 15 million customers the opportunity to manage their savings account via our website, I had to lead and work as part of a team to test and verify that everything worked correctly.</p>
 
 <p>In my day to day role, I lead a team and have to plan the levels of testing we need to do, for which project and who will carry out the testing work. One of my favourite part of my job is when I get to talk to the people (called Users, Clients or Customers) who will be using the new system, to make sure what we think they want, is actually what they want - so good listening and facilitation skills are very important. A critical part of my role is trying my hardest to find errors or faults – we testers call these defects. We testers love finding faults or errors as we can then work with other teams to try and find out why the fault or error is occurring. My role is very important as we have to make sure all our customers data is safe and that they can easily access their financial information through the internet, mobile phones and tablets without encountering problems. As a tester a logical and inquisitive mind is a great asset – I love trying to break things.</p>
@@ -449,12 +476,12 @@
 <div id="information_designer" class="panel">
     <div class='box'>
     
-  <h2>Information Designer</h2>
   <div class="row">
     <div class="column left" >
-  <img src = "img/Design_Tools@4x.png" height="250px">
+  <img src = "img/Design_Tools@4x.png" height="150px">
     </div>
     <div class="column right" >
+  <h2>Information Designer</h2>
 
 <p>Hi, I’m Emily and I am an Information Designer. I find ways to visually present information and data so that that people can easily and quickly understand it. An important part of my role is listening to people and asking questions to find out what information they need to have to do their job well. I use this to decide how to arrange information on a dashboard or page, which graphs to use, and how to draw attention to the most important pieces of information. I work closely with the Project Manager and software developers (who make my designs work with real data). I love pulling together all the information I get from my costumers I am designing information for and my team and figuring out how to show the information in the best possible way – bouncing ideas off other people always helps! </p>
 
@@ -477,12 +504,13 @@
 
 <div id="risk_modeller" class="panel">
     <div class='box'>
-  <h2>Risk Modeller</h2>
   <div class="row">
     <div class="column left" >
-  <img src = "img/Finance_Regulation@4x.png" height="250px">
+  <img src = "img/Finance_Regulation@4x.png" height="150px">
     </div>
     <div class="column right" >
+        <h2>Risk Modeller</h2>
+        
 <p>Hi, I’m Liz, and I am a Risk Modeller. In my role I build and use models which help people to understand where Nationwide Building Society might lose money (e.g. by giving people loans that they then can’t pay back). A model is just a way of representing something and I use data, some maths, and knowledge of how things work in real life to do this. What I love about my role is that I get to learn about lots of different things all the time, solve problems for people and provide insight for my colleagues so that they understand things better too.</p>
 <p> </p>
 <p>I use communication skills to understand the business process in the first place (and to explain the numbers that come out of the model), logical reasoning, maths and statistics to decide how to represent the process, problem solving and coding skills to build the model, and team work and organisational skills to make sure we get things done on time!</p>
@@ -510,12 +538,13 @@
 
 <div id="data_journalist" class="panel">
     <div class='box'>
-  <h2>Data Journalist</h2>
   <div class="row">
     <div class="column left" >
-  <img src = "img/General_Open_book@4x.png" height="250px">
+  <img src = "img/General_Open_book@4x.png" height="150px">
     </div>
     <div class="column right" >
+        <h2>Data Journalist</h2>
+        
 <p>Hi, I’m Isabelle, and I am a Data Journalist. Just like a journalist interviews people, a data journalist questions a dataset. In my role I look for interesting stories in the data but instead of writing articles, I draw charts and graphs.</p>
 <p> </p>
 <p>In my day to day role, I work with a team of Data Scientists and Data Engineers as well as colleagues from across my company. My goal is to create content which links insights from different data sources and reports to create a story and then telling this story to help senior leaders in my company make important decisions. Sometimes there is too much data and so part of my job is to highlight the right content for the audience – and do this in a user friendly and explainable way. </p>
