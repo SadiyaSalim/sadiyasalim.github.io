@@ -108,20 +108,43 @@
       }
       
       
+      
+      @media only screen 
+        and (min-device-width: 768px) 
+        and (max-device-width: 1024px) 
+        and (-webkit-min-device-pixel-ratio: 1) {
+      
       ul.choices {
         list-style: none;
         columns: 3;
         -webkit-columns: 3;
         -moz-columns: 3;
         text-align: center;
-         column-gap: 10%;
          margin-bottom:25px;
          padding-bottom:25px;
-         width:50%;
-         padding-left:25%;
+         width:90%;
+         margin: auto;
+      }
+  }
+  
+  @media(min-width: 1100px){
+      
+      ul.choices {
+              list-style: none;
+              columns: 3;
+              -webkit-columns: 3;
+              -moz-columns: 3;
+              text-align: center;
+               column-gap: 10%;
+               margin-bottom:25px;
+               padding-bottom:25px;
+               width:50%;
+               padding-left:25%;
          
 
-      }
+            }
+        }
+           
       
       input[type="checkbox"]{
           visibility:hidden;
